@@ -1,0 +1,29 @@
+.Home .header {
+    text-align: center;
+    background: lightgrey;
+    padding: 150px;
+}
+
+
+.Home .image1 {
+    max-width: 100%;
+}
+
+.Home .Box {
+    margin-bottom: -100px;
+}
+
+.Home .gallery {
+    margin: -9px 0px;
+}
+
+.Home .gallery img {
+    width: 495px;
+    padding: 5px;
+    filter: grayscale(100%);
+    transition: 1s;
+}
+
+.Home .gallery img:hover {
+    filter: grayscale(0);
+}

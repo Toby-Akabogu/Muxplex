@@ -1,0 +1,29 @@
+.myForm {
+    width: 300px;
+    border: 15px solid lightgrey;
+    padding: 50px;
+    margin: Auto;
+    margin-top: 60px;
+    background: transparent;
+    width: 600px;
+}
+
+.myForm .my-btn{
+    background-color: grey;
+    color: rgba(255, 255, 255, 0.87);
+    padding: 0px;
+    margin: 0px;
+    width: 160px;
+    height: 30px;
+
+}
+
+.card {
+    border: 1px solid rgb(241, 241, 241);
+    text-align: center;
+}
+
+.card p {
+    margin-top: -15px;
+}
+

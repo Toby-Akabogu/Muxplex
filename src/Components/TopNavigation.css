@@ -1,0 +1,30 @@
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar .Links {
+    float: right;
+    font-size: 28px;
+    padding: 28px;
+}
+
+.navbar a {
+    display: block;
+    text-align: center;
+    padding: 10x 16px;
+    text-decoration: none;
+    color: black;
+}
+.navbar .blocks header {
+    padding-top: 100px;
+    color: white;
+    background-color: rgb(29, 29, 29);
+    height: 0px;
+    text-align: center;
+    margin-top: 0px;   
+}
+
+

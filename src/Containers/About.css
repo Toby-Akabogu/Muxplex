@@ -1,0 +1,36 @@
+
+.About .Pic1 {
+    position: relative;
+    left: 650px;
+    bottom: 210px;
+    height: 500px;
+    width: 600px;
+}
+
+.About .Pic2 {
+    position: relative;
+    left: 100px;
+    bottom: 150px;
+    padding-bottom: 100px;
+}
+
+.About h1 {
+    text-align: center;
+}
+
+.About .Box {
+    margin-bottom: -100px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+}
+
+.About .Card {
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 130px;
+
+}
+
+.About .About2 {
+    margin-left: 1000px;
+    width: 300px;
+}
+

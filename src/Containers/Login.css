@@ -1,0 +1,41 @@
+.my-form{
+    width: 300px;
+    border: 15px solid lightgrey;
+    padding: 50px;
+    margin: Auto;
+    margin-top: 60px;
+    background: transparent;
+    width: 600px;
+}
+
+.Login .my-link {
+    margin-left: 50px;
+}
+.Login h1{
+    text-align: center;
+}
+
+.Login form {
+    text-align: center;
+}
+
+.Login p {
+    font-size: 14px;
+}
+
+.Login button {
+    background-color: black;
+    color: white;
+    border: none;
+    text-align: center;
+    padding: 8px 20px;
+    margin: 8px 0;
+    width: 21%;
+}
+
+.Login .InputBox input {
+    width: 40%;
+    padding: 8px 20px;
+    margin: 8px 0;
+}
+

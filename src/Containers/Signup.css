@@ -1,0 +1,13 @@
+.myForm {
+    width: 300px;
+    border: 15px solid lightgrey;
+    padding: 50px;
+    margin: Auto;
+    margin-top: 60px;
+    background: transparent;
+    width: 600px;
+}
+
+.Signup .my-header {
+    text-align: center;
+}
