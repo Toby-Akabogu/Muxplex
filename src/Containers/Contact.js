@@ -66,6 +66,23 @@ class Contact extends React.Component {
         });
     }
 
+    //resets the form to empty values when submitted successfully
+    resetForm() {
+        this.setState({
+            conFirstName: '',
+            conLastName: '',
+            conEmail: '',
+            emailError: false,
+            emailErrorMessage: '',
+            conMessage: '',
+            conPhoneNumber: '',
+            phoneNumberError: false,
+            phoneNumberMessage: ''
+
+        })
+
+    }
+
     //handle submit
     handleSubmit = (e) => {
         fetch('http://localhost:3000/contact', {
@@ -80,6 +97,7 @@ class Contact extends React.Component {
             })
         })
         console.log("Form submitted by " + this.state.conFirstName);
+        this.resetForm();
     }
 
 
