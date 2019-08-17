@@ -1,6 +1,7 @@
 import React from 'react';
 import './Contact.css'
 import TopNav from '../Components/TopNavigation';
+import axios from 'axios';
 import Footer from '../Components/Footer';
 
 
@@ -85,23 +86,22 @@ class Contact extends React.Component {
 
     //handle submit
     handleSubmit = (e) => {
-        fetch('http://localhost:3000/contact', {
-            method: 'post',
-            headers: {'Contact-Type': 'application/json'},
-            body: JSON.stringify({
-                firstName: this.state.conFirstName,
-                lastName: this.state.conLastName,
-                email: this.state.conEmail,
-                phoneNumber: this.state.conPhoneNumber,
-                message: this.state.conMessage                
+        e.preventDefault();
+        console.log(this.state);
+        axios
+            .post('http://localhost:3000/contact', this.state)
+            .then(response => {
+                console.log(response);
             })
-        })
-        console.log("Form submitted by " + this.state.conFirstName);
+            .catch(error =>{
+                console.log(error);
+            })
         this.resetForm();
     }
 
 
     render(){
+        const { conFirstName, conLastName, conEmail, conPhoneNumber, conMessage } = this.state;
         return(
             <div>
                 <TopNav />
@@ -113,31 +113,58 @@ class Contact extends React.Component {
                     <div class="Inputs">
                         <label for="fname">First Name</label>
                         <br></br>
-                        <input type="text" name='firstName' value={this.state.firstName} id="fname" placeholder="First Name" onChange={this.handleFirstNameChange} autoFocus />
+                        <input type="text"
+                         name='conFirstName'
+                         placeholder="First Name"
+                         value = { conFirstName }
+                         onChange={this.handleFirstNameChange}
+                         autoFocus
+                         />
                         <br></br>
                         <br></br>
 
                         <label for="lname">Last Name</label>
                         <br></br>
-                        <input type="text" name='lastName' value={this.state.lastName} id="lname" placeholder="Last Name" onChange={this.handleLastNameChange} />
+                        <input type="text"
+                        name='conLastName'
+                        placeholder="Last Name"
+                        value = { conLastName }
+                        onChange={this.handleLastNameChange}
+                        />
                         <br></br>
                         <br></br>
 
                         <label for="email">Email Address</label>
                         <br></br>
-                        <input type="email" name='email' value={this.state.email} id="email" placeholder="Email Address" onChange={this.handleEmailChange} />
+                        <input type="email"
+                        name='conEmail'
+                        placeholder="Email Address"
+                        value = { conEmail }
+                        onChange={this.handleEmailChange}
+                        />
                         <br></br>
                         <br></br>
 
                         <label for="pnumber">Phone Number</label>
                         <br></br>
-                        <input type="number" name='phoneNumber' value={this.state.phoneNumber} id="pnumber" placeholder="Phone Number" onChange={this.handlePhoneNumberChange} />
+                        <input type="number"
+                        name="conPhoneNumber"
+                        placeholder="Phone Number"
+                        value = { conPhoneNumber }
+                        onChange={this.handlePhoneNumberChange}
+                        />
                         <br></br>
                         <br></br>
                     </div>
                     <label for="message">Message</label>
                     <br></br>
-                    <textarea onChange={this.handleMessageChange} name='message' cols="35" rows="5"></textarea>
+                    <textarea
+                    onChange={this.handleMessageChange}
+                    value = { conMessage }
+                    name='conMessage'
+                    cols="35"
+                    rows="5">
+                    </textarea>
                     <br></br>
                     <br></br>
                     <button class="my-btn">Send</button>
