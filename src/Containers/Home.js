@@ -13,7 +13,7 @@ const QUOTE = '"The premiere destination of high quality, artistry content"'
 class Home extends React.Component{
     render(){
         return(
-            <div className="Home">
+            <div>
                 <TopNav />
                 <body>
                     <img className='image1' src={Trav} alt="Travis" />

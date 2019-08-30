@@ -1,7 +1,9 @@
 import React from 'react';
 import TopNav from '../Components/TopNavigation';
 import Footer from '../Components/Footer';
+import ARI from '../Pictures/ARI.jpg';
 import './Signup.css'
+import axios from 'axios';
 
 const text1 = 'Create your account and get access to all your favorite artists social media profiles in one destination.';
 class Signup extends React.Component {
@@ -14,10 +16,10 @@ class Signup extends React.Component {
         this.handlePasswordConfirmFieldChange = this.handlePasswordConfirmFieldChange.bind(this);
 
         this.state = {
-            firstName: "",
-            lastName: "",
-            dateOfBirth: "",
-            email: "",
+            sFirstName: "",
+            sLastName: "",
+            sDateOfBirth: "",
+            sEmail: "",
             password: "",
             passwordConfirm: "",
         };
@@ -42,7 +44,7 @@ class Signup extends React.Component {
     */
     handleFirstNameFieldChange(e) {
         this.setState({
-            firstName: e.target.value
+            sFirstName: e.target.value
         });
     }
 
@@ -52,7 +54,7 @@ class Signup extends React.Component {
     */
    handleLastNameFieldChange(e) {
     this.setState({
-        lastName: e.target.value
+        sLastName: e.target.value
     });
 }
 
@@ -62,7 +64,7 @@ class Signup extends React.Component {
     */
    handleEmailFieldChange(e) {
     this.setState({
-        email: e.target.value
+        sEmail: e.target.value
     });
 }
 
@@ -86,30 +88,92 @@ class Signup extends React.Component {
     });
 }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+        axios
+            .post('http://localhost:3000/signup', this.state)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        
+    }
+
     render(){
+        const { sEmail, sFirstName, sLastName, password, passwordConfirm } = this.state;
         return(
             <div className="Signup">
                 <TopNav />
                 <div className="card">
                     <h1>All Social Media Activity from talented artists</h1>
                 </div>
-                        <form className="my-form">
-                            <div className="Container">
-                                <h1 className="my-header">Become a muxplex member</h1>
-                                <p>{text1}</p>
-                                <input type="text" onChange={this.handleFirstNameFieldChange} name="firstName" placeholder="First Name"></input>
-                                <input type="text" onChange={this.handleLastNameFieldChange} name="lastName" placeholder="Last Name"></input>
-                                <input type="date" name="dateOfBirth" placeholder="mm/dd/yyyy"></input>
-                                <input type="email" onChange={this.handleEmailFieldChange} name="email" placeholder="Email Address"></input>
-                                <input type="password" onChange={this.handlePasswordFieldChange} name="password" placeholder="password"></input>
-                                <input type="password" onChange={this.handlePasswordConfirmFieldChange} name="passwordConfirm" placeholder="Confirm password"></input>
-                                <p>By creating an account you agree to our Terms & Privacy</p>
-                                <button type="button">Cancel</button>
-                                <button type="submit" className="submitBtn">Submit</button>
-                            </div>
-                        </form>
-                <Footer />
+                    <div className="my-img">
+                        <img src = { ARI } alt="Ariana Grande" />
+                    </div>
+                    <form className="my-form" onSubmit = { this.handleSubmit }>
+                        <h1 className="my-header">Become a muxplex member</h1>
+                        <p>{ text1 }</p>
+                        <input type="text"
+                        className="input-fields"
+                        onChange={this.handleFirstNameFieldChange}
+                        name="sFirstName"
+                        value = { sFirstName }
+                        placeholder="First Name"
+                        >
+                        </input>
 
+                        <input type="text"
+                        onChange={this.handleLastNameFieldChange}
+                        className="input-fields"
+                        name="sLastName"
+                        value = { sLastName }
+                        placeholder="Last Name"
+                        >
+                        </input>
+
+                        <input type="date"
+                        className="input-fields"
+                        name="sDateOfBirth"
+                        placeholder="mm/dd/yyyy"
+                        >
+                        </input>
+
+                        <input type="email"
+                        className="input-fields"
+                        onChange={this.handleEmailFieldChange}
+                        name="sEmail"
+                        value = { sEmail }
+                        placeholder="Email Address"
+                        >
+                        </input>
+
+                        <input type="password"
+                        className="input-fields"
+                        onChange={this.handlePasswordFieldChange}
+                        name="password"
+                        value = { password }
+                        placeholder="password"
+                        >
+                        </input>
+
+                        <input type="password"
+                        className="input-fields"
+                        onChange={this.handlePasswordConfirmFieldChange}
+                        name="passwordConfirm"
+                        value = { passwordConfirm }
+                        placeholder="Confirm password"
+                        >
+                        </input>
+
+                        <p>By creating an account you agree to our Terms & Privacy</p>
+                        <button type="button">Cancel</button>
+                        <button type="submit" className="submitBtn">Submit</button>
+                    </form>
+
+                <Footer />
             </div>
 
         );

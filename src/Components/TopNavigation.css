@@ -6,24 +6,23 @@
 }
 
 .navbar .Links {
+    display: flex;
     float: right;
     font-size: 28px;
     padding: 28px;
 }
 
 .navbar a {
-    display: block;
     text-align: center;
-    padding: 10x 16px;
+    padding: 0px 20px;
     text-decoration: none;
     color: black;
 }
+
 .navbar .blocks header {
     padding-top: 100px;
-    color: white;
     background-color: rgb(29, 29, 29);
     height: 0px;
-    text-align: center;
     margin-top: 0px;   
 }
 

@@ -11,6 +11,7 @@ const HeaderStyle = {
     fontWeight: 'bold'
 }
 
+//Aligns the text under Muxplex
 const HeaderStyle2 = {
     fontSize: '15px',
     textAlign: 'left',
@@ -29,18 +30,20 @@ const TopNavigation = () => {
                 </NavLink>
                 <br></br>
                 <li style={HeaderStyle2}>Activity from your favorite artists</li>
-                <NavLink to='/explore' className="Links">
-                    <li>Explore</li>                 
-                </NavLink>
-                <NavLink to='/contact' className="Links">
-                    <li>Contact</li>
-                </NavLink>
-                <NavLink to='/about' className="Links">
-                    <li>About</li>
-                </NavLink>
-                <NavLink to='/login' className="Links">
-                    <li>Sign-Up/Login</li>
-                </NavLink>              
+                <div className="Links">
+                    <NavLink to='/explore'>
+                        <li>Explore</li>                 
+                    </NavLink>
+                    <NavLink to='/contact'>
+                        <li>Contact</li>
+                    </NavLink>
+                    <NavLink to='/about'>
+                        <li>About</li>
+                    </NavLink>
+                    <NavLink to='/login'>
+                        <li>Sign-Up/Login</li>
+                    </NavLink>  
+                </div> 
             </ul>
             <div className="blocks">
                 <header></header>

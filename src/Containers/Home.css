@@ -1,29 +1,30 @@
-.Home .header {
+.header {
     text-align: center;
     background: lightgrey;
     padding: 150px;
 }
 
 
-.Home .image1 {
+ .image1 {
     max-width: 100%;
 }
 
-.Home .Box {
+.Box {
     margin-bottom: -100px;
 }
 
-.Home .gallery {
+.gallery {
     margin: -9px 0px;
+    display: flex;
 }
 
-.Home .gallery img {
+.gallery img {
     width: 495px;
     padding: 5px;
     filter: grayscale(100%);
     transition: 1s;
 }
 
-.Home .gallery img:hover {
+.gallery img:hover {
     filter: grayscale(0);
 }
